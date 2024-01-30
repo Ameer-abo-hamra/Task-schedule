@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="framework.css" />
+    <link rel="stylesheet" href="css.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital@1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    * {
+      font-family: "Rubik", sans-serif;
+    }
+    .btn {
+      border: none;
+      padding: 4px 8px;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s;
+      margin-right: 5px;
+    }
+    .btn:hover {
+      transform: scale(1.15);
+    }
+    .btn-red {
+      background-color: red;
+    }
+    .btn-green {
+      background-color: green;
+    }
+    .btn-blue {
+      background-color: blue;
+    }
+    .container {
+      background-color: rgb(70, 0, 136);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+    .table {
+      width: 70%;
+      margin: auto;
+      background-color: white;
+      direction: rtl;
+    }
+    .table .header {
+      background-color: rgb(158, 76, 235);
+      color: white;
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      padding: 5px 10px;
+    }
+    .table .header .title {
+      flex-basis: 90%;
+      text-align: center;
+    }
+
+    .table .header .add span {
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      border-radius: 50%;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .table .header .add span:hover {
+      transform: scale(1.2);
+    }
+    .table .header .add span::after,
+    .table .header .add span::before {
+      content: "";
+      position: absolute;
+      background-color: blueviolet;
+    }
+    .table .header .add span::after {
+      width: 2px;
+      height: 80%;
+      left: 50%;
+      top: 10%;
+      transform: translateX(-50%);
+    }
+    .table .header .add span::before {
+      height: 2px;
+      width: 80%;
+      left: 10%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row-reverse;
+      padding: 5px 10px;
+      border-bottom: 1px solid #eee;
+    }
+    .row .right .top {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .row .right .bottom {
+      font-size: 15px;
+      color: #888;
+    }
+    @media (max-width: 768px) {
+      .container {
+        background-color: rgb(70, 0, 136);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .table {
+        margin: 15px 0;
+        width: 95%;
+      }
+      .btn {
+        margin: 0;
+      }
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="table" id="table">
+        <div class="header">
+          <div class="title">
+            <h3>مهامي</h3>
+          </div>
+          <div class="add">
+            <span id="add"></span>
+          </div>
+        </div>
+        <div id="tasks"></div>
+      </div>
+    </div>
+    <script src="js.js"></script>
+  </body>
+</html>
